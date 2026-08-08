@@ -18,8 +18,15 @@ endif
 ifeq ($(UNAME_S),Darwin)
     # macOS flags
     GLUT_LIBS = -framework GLUT -framework OpenGL
-    GLUT_INCLUDES = 
+    GLUT_INCLUDES =
     EXECUTABLE = game_macos
+endif
+
+# Windows (MSYS2/MinGW) flags - requires freeglut installed
+ifeq ($(OS),Windows_NT)
+    GLUT_LIBS = -lfreeglut -lopengl32 -lglu32
+    GLUT_INCLUDES =
+    EXECUTABLE = game_windows.exe
 endif
 
 # Default to Linux if not recognized

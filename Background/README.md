@@ -26,6 +26,11 @@ A 2D platformer game scene rendered using OpenGL and GLUT (OpenGL Utility Toolki
 - OpenGL development libraries
 - Build essentials
 
+### Windows
+- [MSYS2](https://www.msys2.org/) with the MinGW-w64 toolchain (this project's Makefile is GNU Make based and does not work with MSVC/`cl.exe` as-is)
+- freeglut (provides `GL/glut.h` and `-lfreeglut`)
+- OpenGL/GLU (provided by MinGW-w64: `-lopengl32 -lglu32`)
+
 ### Installation
 
 #### macOS
@@ -43,6 +48,15 @@ sudo apt-get install build-essential freeglut3-dev mesa-common-dev
 ```bash
 sudo dnf install gcc-c++ glut-devel mesa-devel
 ```
+
+#### Windows (MSYS2)
+```bash
+# In an MSYS2 MinGW64 shell:
+pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-freeglut make
+```
+Then build from that same MinGW64 shell with `make` as usual. The
+`libfreeglut.dll` from the MSYS2 install (in `/mingw64/bin`) must be on your
+`PATH` (or copied next to the executable) to run `game_windows.exe`.
 
 ## Building
 
