@@ -1,0 +1,6 @@
+# Test and debug build output
+*.out
+*.dSYM/
+
+# macOS
+.DS_Store
