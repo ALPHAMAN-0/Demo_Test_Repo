@@ -4,12 +4,9 @@ Test for the player jump logic (macOS):
 ## Architecture / How it Works
 
 ```mermaid
-flowchart LR
-    A[User] --> B[Demo Test Repo]
-    B --> C{Logic}
-    C --> D[(Data)]
-    C --> E[Output]
-    D --> C
+flowchart TD
+  Background["Background"]
+  RunningVersion["Running version"]
 ```
 
 
